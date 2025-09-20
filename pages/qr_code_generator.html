@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator - Create Professional QR Codes | QR Studio</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Generate professional QR codes with advanced customization options. Real-time preview, logo integration, and multiple export formats." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fqrstudio3767back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-soft sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <rect x="2" y="2" width="6" height="6" rx="1"/>
+                        <rect x="10" y="2" width="2" height="2"/>
+                        <rect x="14" y="2" width="2" height="2"/>
+                        <rect x="18" y="2" width="2" height="2"/>
+                        <rect x="24" y="2" width="6" height="6" rx="1"/>
+                        <rect x="2" y="10" width="2" height="2"/>
+                        <rect x="6" y="10" width="2" height="2"/>
+                        <rect x="10" y="10" width="6" height="6" rx="1"/>
+                        <rect x="18" y="10" width="2" height="2"/>
+                        <rect x="24" y="10" width="2" height="2"/>
+                        <rect x="28" y="10" width="2" height="2"/>
+                        <rect x="2" y="14" width="2" height="2"/>
+                        <rect x="18" y="14" width="2" height="2"/>
+                        <rect x="24" y="14" width="2" height="2"/>
+                        <rect x="28" y="14" width="2" height="2"/>
+                        <rect x="2" y="18" width="2" height="2"/>
+                        <rect x="10" y="18" width="2" height="2"/>
+                        <rect x="14" y="18" width="2" height="2"/>
+                        <rect x="18" y="18" width="2" height="2"/>
+                        <rect x="24" y="18" width="2" height="2"/>
+                        <rect x="28" y="18" width="2" height="2"/>
+                        <rect x="2" y="24" width="6" height="6" rx="1"/>
+                        <rect x="10" y="24" width="2" height="2"/>
+                        <rect x="14" y="24" width="2" height="2"/>
+                        <rect x="18" y="24" width="2" height="2"/>
+                        <rect x="24" y="24" width="6" height="6" rx="1"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">QR Studio</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="qr_code_generator.html" class="text-primary font-semibold">Generator</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-primary transition-colors">Dashboard</a>
+                    <a href="batch_generator.html" class="text-gray-600 hover:text-primary transition-colors">Batch Tools</a>
+                    <a href="resource_hub.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+                    <button class="btn-primary">Save QR Code</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Generator Interface -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="mb-8">
+            <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">QR Code Generator</h1>
+            <p class="text-xl text-gray-600">Create professional QR codes with advanced customization options and real-time preview.</p>
+        </div>
+
+        <!-- Template Gallery Sidebar (Mobile: Hidden by default) -->
+        <div class="hidden lg:block fixed left-4 top-24 w-64 h-96 bg-surface rounded-xl shadow-soft p-4 z-40">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold text-gray-900">Quick Templates</h3>
+                <button class="text-gray-400 hover:text-gray-600">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="space-y-3 overflow-y-auto h-80">
+                <!-- Restaurant Menu Template -->
+                <div class="group cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-medium text-sm text-gray-900">Restaurant Menu</div>
+                            <div class="text-xs text-gray-500">Contactless dining</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Card Template -->
+                <div class="group cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-medium text-sm text-gray-900">Business Card</div>
+                            <div class="text-xs text-gray-500">Contact info</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Template -->
+                <div class="group cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-medium text-sm text-gray-900">Social Profile</div>
+                            <div class="text-xs text-gray-500">Follow links</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event Template -->
+                <div class="group cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4m-6 0h6m-6 0a2 2 0 00-2 2v10a2 2 0 002 2h6a2 2 0 002-2V9a2 2 0 00-2-2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-medium text-sm text-gray-900">Event Info</div>
+                            <div class="text-xs text-gray-500">Calendar entry</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WiFi Template -->
+                <div class="group cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-medium text-sm text-gray-900">WiFi Access</div>
+                            <div class="text-xs text-gray-500">Network login</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid lg:grid-cols-2 gap-8 lg:pl-72">
+            <!-- Left Panel - Customization Controls -->
+            <div class="space-y-6">
+                <!-- Content Type Section -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-gray-900">Content Type</h2>
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+                    
+                    <!-- Content Type Tabs -->
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <button class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium">URL</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors">Text</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors">Contact</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors">WiFi</button>
+                        <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-200 transition-colors">Location</button>
+                    </div>
+
+                    <!-- URL Input -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Website URL</label>
+                            <input type="url" placeholder="https://your-website.com" class="input-field" value="https://qrstudio.com" />
+                        </div>
+                        
+                        <!-- Smart Suggestions -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <div class="flex items-start gap-3">
+                                <svg class="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <div>
+                                    <h4 class="text-sm font-medium text-blue-900 mb-1">Smart Suggestion</h4>
+                                    <p class="text-sm text-blue-700">We detected this is a business website. Consider adding your logo and using professional colors.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design Customization Section -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-gray-900">Design Customization</h2>
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+
+                    <!-- Color Selection -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Colors</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-2">Foreground</label>
+                                    <div class="flex items-center gap-2">
+                                        <input type="color" value="#000000" class="w-10 h-10 rounded-lg border border-gray-300 cursor-pointer" />
+                                        <input type="text" value="#000000" class="input-field text-sm font-mono" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs text-gray-500 mb-2">Background</label>
+                                    <div class="flex items-center gap-2">
+                                        <input type="color" value="#FFFFFF" class="w-10 h-10 rounded-lg border border-gray-300 cursor-pointer" />
+                                        <input type="text" value="#FFFFFF" class="input-field text-sm font-mono" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pattern Selection -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Pattern Style</label>
+                            <div class="grid grid-cols-4 gap-2">
+                                <button class="aspect-square border-2 border-primary bg-primary-50 rounded-lg p-2 flex items-center justify-center">
+                                    <div class="w-6 h-6 bg-gray-900 rounded-sm"></div>
+                                </button>
+                                <button class="aspect-square border border-gray-300 rounded-lg p-2 flex items-center justify-center hover:border-gray-400 transition-colors">
+                                    <div class="w-6 h-6 bg-gray-900 rounded-full"></div>
+                                </button>
+                                <button class="aspect-square border border-gray-300 rounded-lg p-2 flex items-center justify-center hover:border-gray-400 transition-colors">
+                                    <div class="w-6 h-6 bg-gray-900 transform rotate-45"></div>
+                                </button>
+                                <button class="aspect-square border border-gray-300 rounded-lg p-2 flex items-center justify-center hover:border-gray-400 transition-colors">
+                                    <div class="w-6 h-6 bg-gray-900 rounded-lg"></div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Corner Style -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Corner Style</label>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button class="px-3 py-2 border-2 border-primary bg-primary-50 text-primary rounded-lg text-sm font-medium">Square</button>
+                                <button class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:border-gray-400 transition-colors">Rounded</button>
+                                <button class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:border-gray-400 transition-colors">Circle</button>
+                            </div>
+                        </div>
+
+                        <!-- Logo Upload -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-3">Logo Integration</label>
+                            <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-gray-400 transition-colors cursor-pointer">
+                                <svg class="w-8 h-8 text-gray-400 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                                </svg>
+                                <p class="text-sm text-gray-600 mb-1">Drop your logo here or click to browse</p>
+                                <p class="text-xs text-gray-500">PNG, JPG, SVG up to 5MB</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Settings Section -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-gray-900">Advanced Settings</h2>
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Error Correction -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Error Correction Level</label>
+                            <select class="input-field">
+                                <option>Low (7%)</option>
+                                <option selected>Medium (15%)</option>
+                                <option>Quartile (25%)</option>
+                                <option>High (30%)</option>
+                            </select>
+                        </div>
+
+                        <!-- Size Optimization -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Size (pixels)</label>
+                            <div class="flex items-center gap-4">
+                                <input type="range" min="100" max="2000" value="512" class="flex-1" />
+                                <span class="text-sm font-mono text-gray-600 w-16">512px</span>
+                            </div>
+                        </div>
+
+                        <!-- Format Selection -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Export Format</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button class="px-3 py-2 border-2 border-primary bg-primary-50 text-primary rounded-lg text-sm font-medium">PNG</button>
+                                <button class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:border-gray-400 transition-colors">SVG</button>
+                                <button class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:border-gray-400 transition-colors">PDF</button>
+                                <button class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:border-gray-400 transition-colors">EPS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Batch Processing Tools -->
+                <div class="card bg-gradient-to-r from-secondary-50 to-accent-50 border-secondary-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Batch Processing</h3>
+                            <p class="text-sm text-gray-600">Generate multiple QR codes at once</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="border-2 border-dashed border-secondary-300 rounded-lg p-4 text-center">
+                            <p class="text-sm text-gray-600">Upload CSV file with URLs or data</p>
+                        </div>
+                        <a href="batch_generator.html" class="btn-secondary w-full text-center block">
+                            Open Batch Generator
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Live Preview -->
+            <div class="space-y-6">
+                <!-- QR Code Preview -->
+                <div class="card text-center">
+                    <h2 class="text-lg font-semibold text-gray-900 mb-6">Live Preview</h2>
+                    
+                    <!-- QR Code Display -->
+                    <div class="qr-preview mx-auto mb-6">
+                        <div class="w-80 h-80 mx-auto bg-white border-2 border-gray-200 rounded-xl relative overflow-hidden">
+                            <!-- QR Pattern with Logo -->
+                            <div class="absolute inset-0 grid grid-cols-16 gap-1 p-4">
+                                <!-- QR Code Pattern Simulation -->
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <div class="bg-gray-900 rounded-sm"></div>
+                                <div class="bg-white"></div>
+                                <!-- More pattern elements would continue here -->
+                            </div>
+                            
+                            <!-- Logo in Center -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center shadow-lg">
+                                    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Info -->
+                    <div class="space-y-3 text-sm text-gray-600">
+                        <div class="flex justify-between">
+                            <span>Size:</span>
+                            <span class="font-mono">512 × 512 px</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Format:</span>
+                            <span>PNG</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Error Correction:</span>
+                            <span>Medium (15%)</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Estimated File Size:</span>
+                            <span>~45 KB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="card">
+                    <h3 class="font-semibold text-gray-900 mb-4">Export Options</h3>
+                    
+                    <!-- Resolution Settings -->
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Use Case</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button class="px-3 py-2 border-2 border-primary bg-primary-50 text-primary rounded-lg text-sm font-medium">Digital</button>
+                                <button class="px-3 py-2 border border-gray-300 text-gray-700 rounded-lg text-sm font-medium hover:border-gray-400 transition-colors">Print</button>
+                            </div>
+                        </div>
+
+                        <!-- Download Buttons -->
+                        <div class="space-y-2">
+                            <button class="btn-primary w-full flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-4-4m4 4l4-4m-4-4V3"/>
+                                </svg>
+                                Download PNG
+                            </button>
+                            <button class="btn-secondary w-full flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                                Copy to Clipboard
+                            </button>
+                        </div>
+
+                        <!-- Save to Dashboard -->
+                        <div class="border-t pt-4">
+                            <button class="w-full px-4 py-3 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+                                </svg>
+                                Save to Dashboard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accessibility Features -->
+                <div class="card bg-accent-50 border-accent-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Accessibility</h3>
+                            <p class="text-sm text-gray-600">Optimized for all users</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded border-gray-300 text-accent focus:ring-accent" />
+                            <span class="text-sm text-gray-700">High contrast mode</span>
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" checked class="rounded border-gray-300 text-accent focus:ring-accent" />
+                            <span class="text-sm text-gray-700">Screen reader compatible</span>
+                        </label>
+                        <label class="flex items-center gap-2">
+                            <input type="checkbox" class="rounded border-gray-300 text-accent focus:ring-accent" />
+                            <span class="text-sm text-gray-700">Keyboard navigation</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Template Gallery Toggle -->
+    <div class="lg:hidden fixed bottom-4 left-4 z-50">
+        <button class="w-12 h-12 bg-primary text-white rounded-full shadow-floating flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Download CTA -->
+    <div class="lg:hidden fixed bottom-4 right-4 z-50">
+        <button class="btn-primary shadow-floating">
+            Download QR
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <rect x="2" y="2" width="6" height="6" rx="1"/>
+                            <rect x="10" y="2" width="2" height="2"/>
+                            <rect x="14" y="2" width="2" height="2"/>
+                            <rect x="18" y="2" width="2" height="2"/>
+                            <rect x="24" y="2" width="6" height="6" rx="1"/>
+                            <rect x="2" y="10" width="2" height="2"/>
+                            <rect x="6" y="10" width="2" height="2"/>
+                            <rect x="10" y="10" width="6" height="6" rx="1"/>
+                            <rect x="18" y="10" width="2" height="2"/>
+                            <rect x="24" y="10" width="2" height="2"/>
+                            <rect x="28" y="10" width="2" height="2"/>
+                            <rect x="2" y="14" width="2" height="2"/>
+                            <rect x="18" y="14" width="2" height="2"/>
+                            <rect x="24" y="14" width="2" height="2"/>
+                            <rect x="28" y="14" width="2" height="2"/>
+                            <rect x="2" y="18" width="2" height="2"/>
+                            <rect x="10" y="18" width="2" height="2"/>
+                            <rect x="14" y="18" width="2" height="2"/>
+                            <rect x="18" y="18" width="2" height="2"/>
+                            <rect x="24" y="18" width="2" height="2"/>
+                            <rect x="28" y="18" width="2" height="2"/>
+                            <rect x="2" y="24" width="6" height="6" rx="1"/>
+                            <rect x="10" y="24" width="2" height="2"/>
+                            <rect x="14" y="24" width="2" height="2"/>
+                            <rect x="18" y="24" width="2" height="2"/>
+                            <rect x="24" y="24" width="6" height="6" rx="1"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">QR Studio</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Professional QR code generation platform trusted by millions worldwide.
+                    </p>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="qr_code_generator.html" class="hover:text-white transition-colors">QR Generator</a></li>
+                        <li><a href="batch_generator.html" class="hover:text-white transition-colors">Batch Tools</a></li>
+                        <li><a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="resource_hub.html" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Best Practices</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 QR Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

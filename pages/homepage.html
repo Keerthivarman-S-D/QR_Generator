@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Studio - Professional QR Codes That Work As Hard As You Do</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Create professional QR codes with advanced customization, analytics tracking, and enterprise tools. Join 2M+ users generating reliable QR codes." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fqrstudio3767back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-soft sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <rect x="2" y="2" width="6" height="6" rx="1"/>
+                        <rect x="10" y="2" width="2" height="2"/>
+                        <rect x="14" y="2" width="2" height="2"/>
+                        <rect x="18" y="2" width="2" height="2"/>
+                        <rect x="24" y="2" width="6" height="6" rx="1"/>
+                        <rect x="2" y="10" width="2" height="2"/>
+                        <rect x="6" y="10" width="2" height="2"/>
+                        <rect x="10" y="10" width="6" height="6" rx="1"/>
+                        <rect x="18" y="10" width="2" height="2"/>
+                        <rect x="24" y="10" width="2" height="2"/>
+                        <rect x="28" y="10" width="2" height="2"/>
+                        <rect x="2" y="14" width="2" height="2"/>
+                        <rect x="18" y="14" width="2" height="2"/>
+                        <rect x="24" y="14" width="2" height="2"/>
+                        <rect x="28" y="14" width="2" height="2"/>
+                        <rect x="2" y="18" width="2" height="2"/>
+                        <rect x="10" y="18" width="2" height="2"/>
+                        <rect x="14" y="18" width="2" height="2"/>
+                        <rect x="18" y="18" width="2" height="2"/>
+                        <rect x="24" y="18" width="2" height="2"/>
+                        <rect x="28" y="18" width="2" height="2"/>
+                        <rect x="2" y="24" width="6" height="6" rx="1"/>
+                        <rect x="10" y="24" width="2" height="2"/>
+                        <rect x="14" y="24" width="2" height="2"/>
+                        <rect x="18" y="24" width="2" height="2"/>
+                        <rect x="24" y="24" width="6" height="6" rx="1"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">QR Studio</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-primary font-semibold">Home</a>
+                    <a href="qr_code_generator.html" class="text-gray-600 hover:text-primary transition-colors">Generator</a>
+                    <a href="dashboard.html" class="text-gray-600 hover:text-primary transition-colors">Dashboard</a>
+                    <a href="batch_generator.html" class="text-gray-600 hover:text-primary transition-colors">Batch Tools</a>
+                    <a href="resource_hub.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+                    <button class="btn-primary">Get Started</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Live Preview -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-primary-50 via-surface to-secondary-50 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-8 animation-fade-in">
+                    <div class="space-y-4">
+                        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            Professional QR Codes That 
+                            <span class="text-primary">Work As Hard</span> 
+                            As You Do
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            Transform simple QR codes into powerful marketing tools with advanced customization, 
+                            real-time analytics, and enterprise-grade reliability.
+                        </p>
+                    </div>
+
+                    <!-- Quick Generator Interface -->
+                    <div class="bg-surface rounded-2xl shadow-soft p-6 space-y-4">
+                        <h3 class="text-lg font-semibold text-gray-900">Try it now - Enter your URL:</h3>
+                        <div class="flex gap-3">
+                            <input type="url" placeholder="https://your-website.com" class="input-field flex-1" value="https://qrstudio.com" />
+                            <button class="btn-primary whitespace-nowrap">Generate</button>
+                        </div>
+                        <div class="flex gap-4 text-sm">
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded border-gray-300 text-primary focus:ring-primary" />
+                                <span class="text-gray-600">Add logo</span>
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="checkbox" class="rounded border-gray-300 text-secondary focus:ring-secondary" />
+                                <span class="text-gray-600">Custom colors</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="qr_code_generator.html" class="btn-primary text-center">
+                            Start Creating Free
+                        </a>
+                        <button class="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all">
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live QR Preview -->
+                <div class="relative">
+                    <div class="qr-preview text-center">
+                        <div class="inline-block p-8 bg-surface rounded-xl shadow-hover">
+                            <!-- QR Code Placeholder -->
+                            <div class="w-48 h-48 mx-auto bg-gray-900 rounded-lg relative overflow-hidden">
+                                <!-- QR Pattern -->
+                                <div class="absolute inset-0 grid grid-cols-8 gap-1 p-2">
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                    <div class="bg-gray-900"></div>
+                                    <div class="bg-surface rounded-sm"></div>
+                                </div>
+                                <!-- Logo in center -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-500">Live preview updates as you customize</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23000000" fill-opacity="0.1"><rect width="2" height="2" x="0" y="0"></rect><rect width="2" height="2" x="20" y="0"></rect><rect width="2" height="2" x="40" y="0"></rect><rect width="2" height="2" x="0" y="20"></rect><rect width="2" height="2" x="20" y="20"></rect><rect width="2" height="2" x="40" y="20"></rect><rect width="2" height="2" x="0" y="40"></rect><rect width="2" height="2" x="20" y="40"></rect><rect width="2" height="2" x="40" y="40"></rect></g></g>')"></div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-primary">2M+</div>
+                    <div class="text-gray-600">QR Codes Generated</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-secondary">500+</div>
+                    <div class="text-gray-600">Enterprise Clients</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="text-4xl font-bold text-accent">99.9%</div>
+                    <div class="text-gray-600">Scan Reliability</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Everything You Need for Professional QR Codes
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From simple generation to enterprise-grade analytics, QR Studio provides the complete toolkit 
+                    for creating QR codes that drive results.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Advanced Customization -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary-200 transition-colors">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced Customization</h3>
+                    <p class="text-gray-600 mb-4">
+                        Brand colors, logo integration, custom patterns, and professional design templates 
+                        that match your brand identity perfectly.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Custom color schemes
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Logo embedding
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Design templates
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Analytics & Tracking -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary-200 transition-colors">
+                        <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Analytics & Tracking</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive scan metrics, geographic data, device insights, and performance 
+                        analytics to optimize your QR code campaigns.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Real-time scan data
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Geographic insights
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Device analytics
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Enterprise Tools -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-200 transition-colors">
+                        <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-3">Enterprise Tools</h3>
+                    <p class="text-gray-600 mb-4">
+                        Bulk generation, API access, team collaboration, and advanced management 
+                        features for organizations of any size.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Bulk generation
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            API integration
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            Team collaboration
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Templates Section -->
+    <section class="py-20 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Templates for Every Industry
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Get started quickly with professionally designed templates optimized for your specific use case.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Restaurant Menu -->
+                <div class="group cursor-pointer">
+                    <div class="card hover:shadow-hover transition-all duration-300">
+                        <div class="aspect-square bg-gradient-to-br from-orange-50 to-red-50 rounded-lg mb-4 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Restaurant menu QR code template" class="w-full h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Restaurant Menu</h3>
+                        <p class="text-sm text-gray-600">Digital menus with contactless ordering</p>
+                    </div>
+                </div>
+
+                <!-- Business Card -->
+                <div class="group cursor-pointer">
+                    <div class="card hover:shadow-hover transition-all duration-300">
+                        <div class="aspect-square bg-gradient-to-br from-blue-50 to-indigo-50 rounded-lg mb-4 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Business card QR code template" class="w-full h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2017/01/14/12/59/iceland-1979445_1280.jpg'; this.onerror=null;" />
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Business Card</h3>
+                        <p class="text-sm text-gray-600">Professional contact information sharing</p>
+                    </div>
+                </div>
+
+                <!-- Event Ticket -->
+                <div class="group cursor-pointer">
+                    <div class="card hover:shadow-hover transition-all duration-300">
+                        <div class="aspect-square bg-gradient-to-br from-purple-50 to-pink-50 rounded-lg mb-4 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Event ticket QR code template" class="w-full h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Event Ticket</h3>
+                        <p class="text-sm text-gray-600">Seamless event check-in and access</p>
+                    </div>
+                </div>
+
+                <!-- Marketing Campaign -->
+                <div class="group cursor-pointer">
+                    <div class="card hover:shadow-hover transition-all duration-300">
+                        <div class="aspect-square bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg mb-4 flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Marketing campaign QR code template" class="w-full h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pixabay.com/photo/2016/11/27/21/42/stock-1863880_1280.jpg'; this.onerror=null;" />
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Marketing Campaign</h3>
+                        <p class="text-sm text-gray-600">Drive engagement and track performance</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="qr_code_generator.html" class="btn-secondary">
+                    Browse All Templates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Logos Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">
+                    Trusted by Leading Brands
+                </h2>
+                <p class="text-gray-600">
+                    Join thousands of companies using QR Studio for their digital marketing needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center opacity-60">
+                <!-- Logo placeholders with hover effects -->
+                <div class="group cursor-pointer transition-all duration-300 hover:opacity-100">
+                    <div class="h-12 bg-gray-300 rounded flex items-center justify-center">
+                        <span class="text-gray-600 font-semibold text-sm">TechCorp</span>
+                    </div>
+                </div>
+                <div class="group cursor-pointer transition-all duration-300 hover:opacity-100">
+                    <div class="h-12 bg-gray-300 rounded flex items-center justify-center">
+                        <span class="text-gray-600 font-semibold text-sm">RestaurantCo</span>
+                    </div>
+                </div>
+                <div class="group cursor-pointer transition-all duration-300 hover:opacity-100">
+                    <div class="h-12 bg-gray-300 rounded flex items-center justify-center">
+                        <span class="text-gray-600 font-semibold text-sm">EventPro</span>
+                    </div>
+                </div>
+                <div class="group cursor-pointer transition-all duration-300 hover:opacity-100">
+                    <div class="h-12 bg-gray-300 rounded flex items-center justify-center">
+                        <span class="text-gray-600 font-semibold text-sm">RetailMax</span>
+                    </div>
+                </div>
+                <div class="group cursor-pointer transition-all duration-300 hover:opacity-100">
+                    <div class="h-12 bg-gray-300 rounded flex items-center justify-center">
+                        <span class="text-gray-600 font-semibold text-sm">HealthPlus</span>
+                    </div>
+                </div>
+                <div class="group cursor-pointer transition-all duration-300 hover:opacity-100">
+                    <div class="h-12 bg-gray-300 rounded flex items-center justify-center">
+                        <span class="text-gray-600 font-semibold text-sm">EduTech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-primary text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-6">
+                Ready to Create Professional QR Codes?
+            </h2>
+            <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+                Join over 2 million users who trust QR Studio for their QR code generation needs. 
+                Start creating today with our free plan.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="qr_code_generator.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Start Creating Free
+                </a>
+                <a href="dashboard.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all">
+                    View Dashboard
+                </a>
+            </div>
+        </div>
+
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=" 60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"></circle></g></g>')"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <rect x="2" y="2" width="6" height="6" rx="1"/>
+                            <rect x="10" y="2" width="2" height="2"/>
+                            <rect x="14" y="2" width="2" height="2"/>
+                            <rect x="18" y="2" width="2" height="2"/>
+                            <rect x="24" y="2" width="6" height="6" rx="1"/>
+                            <rect x="2" y="10" width="2" height="2"/>
+                            <rect x="6" y="10" width="2" height="2"/>
+                            <rect x="10" y="10" width="6" height="6" rx="1"/>
+                            <rect x="18" y="10" width="2" height="2"/>
+                            <rect x="24" y="10" width="2" height="2"/>
+                            <rect x="28" y="10" width="2" height="2"/>
+                            <rect x="2" y="14" width="2" height="2"/>
+                            <rect x="18" y="14" width="2" height="2"/>
+                            <rect x="24" y="14" width="2" height="2"/>
+                            <rect x="28" y="14" width="2" height="2"/>
+                            <rect x="2" y="18" width="2" height="2"/>
+                            <rect x="10" y="18" width="2" height="2"/>
+                            <rect x="14" y="18" width="2" height="2"/>
+                            <rect x="18" y="18" width="2" height="2"/>
+                            <rect x="24" y="18" width="2" height="2"/>
+                            <rect x="28" y="18" width="2" height="2"/>
+                            <rect x="2" y="24" width="6" height="6" rx="1"/>
+                            <rect x="10" y="24" width="2" height="2"/>
+                            <rect x="14" y="24" width="2" height="2"/>
+                            <rect x="18" y="24" width="2" height="2"/>
+                            <rect x="24" y="24" width="6" height="6" rx="1"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">QR Studio</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Professional QR code generation platform trusted by millions worldwide.
+                    </p>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="qr_code_generator.html" class="hover:text-white transition-colors">QR Generator</a></li>
+                        <li><a href="batch_generator.html" class="hover:text-white transition-colors">Batch Tools</a></li>
+                        <li><a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="resource_hub.html" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Best Practices</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 QR Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="fixed bottom-4 left-4 right-4 md:hidden z-50">
+        <a href="qr_code_generator.html" class="btn-primary w-full text-center block shadow-floating">
+            Generate Your First QR Code
+        </a>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

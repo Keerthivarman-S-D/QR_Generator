@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - QR Studio</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Manage your QR codes, track performance, and analyze scan data with QR Studio's comprehensive dashboard." />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fqrstudio3767back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-soft sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                        <rect x="2" y="2" width="6" height="6" rx="1"/>
+                        <rect x="10" y="2" width="2" height="2"/>
+                        <rect x="14" y="2" width="2" height="2"/>
+                        <rect x="18" y="2" width="2" height="2"/>
+                        <rect x="24" y="2" width="6" height="6" rx="1"/>
+                        <rect x="2" y="10" width="2" height="2"/>
+                        <rect x="6" y="10" width="2" height="2"/>
+                        <rect x="10" y="10" width="6" height="6" rx="1"/>
+                        <rect x="18" y="10" width="2" height="2"/>
+                        <rect x="24" y="10" width="2" height="2"/>
+                        <rect x="28" y="10" width="2" height="2"/>
+                        <rect x="2" y="14" width="2" height="2"/>
+                        <rect x="18" y="14" width="2" height="2"/>
+                        <rect x="24" y="14" width="2" height="2"/>
+                        <rect x="28" y="14" width="2" height="2"/>
+                        <rect x="2" y="18" width="2" height="2"/>
+                        <rect x="10" y="18" width="2" height="2"/>
+                        <rect x="14" y="18" width="2" height="2"/>
+                        <rect x="18" y="18" width="2" height="2"/>
+                        <rect x="24" y="18" width="2" height="2"/>
+                        <rect x="28" y="18" width="2" height="2"/>
+                        <rect x="2" y="24" width="6" height="6" rx="1"/>
+                        <rect x="10" y="24" width="2" height="2"/>
+                        <rect x="14" y="24" width="2" height="2"/>
+                        <rect x="18" y="24" width="2" height="2"/>
+                        <rect x="24" y="24" width="6" height="6" rx="1"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">QR Studio</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                    <a href="qr_code_generator.html" class="text-gray-600 hover:text-primary transition-colors">Generator</a>
+                    <a href="dashboard.html" class="text-primary font-semibold">Dashboard</a>
+                    <a href="batch_generator.html" class="text-gray-600 hover:text-primary transition-colors">Batch Tools</a>
+                    <a href="resource_hub.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+                    
+                    <!-- User Profile -->
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                            <span class="text-white text-sm font-semibold">JD</span>
+                        </div>
+                        <span class="text-gray-700 font-medium">John Doe</span>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="bg-gradient-to-br from-primary-50 via-surface to-secondary-50 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900 mb-2">Dashboard</h1>
+                    <p class="text-gray-600">Manage your QR codes and track performance</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="qr_code_generator.html" class="btn-primary">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        Create New QR Code
+                    </a>
+                    <button class="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-primary hover:text-primary transition-all">
+                        Export Data
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Metrics -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <!-- Total QR Codes -->
+                <div class="card">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Total QR Codes</p>
+                            <p class="text-2xl font-bold text-gray-900">247</p>
+                            <p class="text-sm text-secondary">+12 this month</p>
+                        </div>
+                        <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Scans -->
+                <div class="card">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Total Scans</p>
+                            <p class="text-2xl font-bold text-gray-900">18,542</p>
+                            <p class="text-sm text-secondary">+1,234 this week</p>
+                        </div>
+                        <div class="w-12 h-12 bg-secondary-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Campaigns -->
+                <div class="card">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Active Campaigns</p>
+                            <p class="text-2xl font-bold text-gray-900">8</p>
+                            <p class="text-sm text-accent">2 ending soon</p>
+                        </div>
+                        <div class="w-12 h-12 bg-accent-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scan Rate -->
+                <div class="card">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-sm text-gray-600 mb-1">Avg. Scan Rate</p>
+                            <p class="text-2xl font-bold text-gray-900">12.4%</p>
+                            <p class="text-sm text-secondary">+2.1% vs last month</p>
+                        </div>
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                <!-- Scan Trends Chart -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Scan Trends</h3>
+                        <select class="text-sm border border-gray-300 rounded-lg px-3 py-2">
+                            <option>Last 7 days</option>
+                            <option>Last 30 days</option>
+                            <option>Last 3 months</option>
+                        </select>
+                    </div>
+                    <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                        <!-- Chart Placeholder -->
+                        <svg class="w-full h-full" viewBox="0 0 400 200" aria-label="Scan trends chart">
+                            <defs>
+                                <linearGradient id="scanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.3"/>
+                                    <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0"/>
+                                </linearGradient>
+                            </defs>
+                            <polyline fill="none" stroke="#3B82F6" stroke-width="3" points="20,160 60,140 100,120 140,100 180,80 220,90 260,70 300,60 340,50 380,40"/>
+                            <polygon fill="url(#scanGradient)" points="20,160 60,140 100,120 140,100 180,80 220,90 260,70 300,60 340,50 380,40 380,180 20,180"/>
+                            <text x="200" y="195" text-anchor="middle" class="text-xs fill-gray-500">Daily Scans Over Time</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Top Performing QR Codes -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Top Performing QR Codes</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-gray-300 rounded-lg"></div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Restaurant Menu</p>
+                                    <p class="text-sm text-gray-600">Created Sep 15, 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-gray-900">2,847</p>
+                                <p class="text-sm text-gray-600">scans</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-gray-300 rounded-lg"></div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Business Card</p>
+                                    <p class="text-sm text-gray-600">Created Sep 12, 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-gray-900">1,923</p>
+                                <p class="text-sm text-gray-600">scans</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-gray-300 rounded-lg"></div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Event Ticket</p>
+                                    <p class="text-sm text-gray-600">Created Sep 10, 2025</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-semibold text-gray-900">1,456</p>
+                                <p class="text-sm text-gray-600">scans</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code Management Section -->
+    <section class="py-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Filters and Search -->
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 mb-8">
+                <div class="flex flex-col sm:flex-row gap-4 flex-1">
+                    <div class="relative flex-1 max-w-md">
+                        <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                        <input type="text" placeholder="Search QR codes..." class="input-field pl-10" />
+                    </div>
+                    
+                    <select class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <option>All Types</option>
+                        <option>URL</option>
+                        <option>Text</option>
+                        <option>vCard</option>
+                        <option>WiFi</option>
+                    </select>
+                    
+                    <select class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500">
+                        <option>All Time</option>
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 3 months</option>
+                    </select>
+                </div>
+
+                <div class="flex gap-2">
+                    <button class="px-4 py-2 text-gray-600 hover:text-primary transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                        </svg>
+                    </button>
+                    <button class="px-4 py-2 text-primary">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- QR Code Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- QR Code Card 1 -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <div class="w-32 h-32 bg-gray-900 rounded-lg relative">
+                            <!-- QR Pattern -->
+                            <div class="absolute inset-0 grid grid-cols-6 gap-1 p-2">
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Restaurant Menu</h3>
+                            <p class="text-sm text-gray-600">https://restaurant.com/menu</p>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Sep 15, 2025</span>
+                            <span class="font-medium text-secondary">2,847 scans</span>
+                        </div>
+                        
+                        <div class="flex gap-2 pt-2">
+                            <button class="flex-1 px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg hover:bg-primary-100 transition-colors">
+                                Edit
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Card 2 -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <div class="w-32 h-32 bg-gray-900 rounded-lg relative">
+                            <div class="absolute inset-0 grid grid-cols-6 gap-1 p-2">
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                            </div>
+                            <!-- Logo in center -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Business Card</h3>
+                            <p class="text-sm text-gray-600">Contact: John Doe</p>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Sep 12, 2025</span>
+                            <span class="font-medium text-secondary">1,923 scans</span>
+                        </div>
+                        
+                        <div class="flex gap-2 pt-2">
+                            <button class="flex-1 px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg hover:bg-primary-100 transition-colors">
+                                Edit
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Card 3 -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <div class="w-32 h-32 bg-gray-900 rounded-lg relative">
+                            <div class="absolute inset-0 grid grid-cols-6 gap-1 p-2">
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Event Ticket</h3>
+                            <p class="text-sm text-gray-600">Tech Conference 2025</p>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Sep 10, 2025</span>
+                            <span class="font-medium text-secondary">1,456 scans</span>
+                        </div>
+                        
+                        <div class="flex gap-2 pt-2">
+                            <button class="flex-1 px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg hover:bg-primary-100 transition-colors">
+                                Edit
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR Code Card 4 -->
+                <div class="card group hover:shadow-hover transition-all duration-300">
+                    <div class="aspect-square bg-gray-100 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                        <div class="w-32 h-32 bg-gray-900 rounded-lg relative">
+                            <div class="absolute inset-0 grid grid-cols-6 gap-1 p-2">
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                                <div class="bg-surface rounded-sm"></div>
+                                <div class="bg-gray-900"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div>
+                            <h3 class="font-semibold text-gray-900">WiFi Access</h3>
+                            <p class="text-sm text-gray-600">Office Network</p>
+                        </div>
+                        
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Sep 8, 2025</span>
+                            <span class="font-medium text-secondary">892 scans</span>
+                        </div>
+                        
+                        <div class="flex gap-2 pt-2">
+                            <button class="flex-1 px-3 py-2 text-sm bg-primary-50 text-primary rounded-lg hover:bg-primary-100 transition-colors">
+                                Edit
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                </svg>
+                            </button>
+                            <button class="px-3 py-2 text-sm text-gray-600 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-8">
+                <button class="btn-secondary">Load More QR Codes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Activity & Analytics -->
+    <section class="py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Recent Activity</h3>
+                        <button class="text-sm text-primary hover:text-primary-700">View All</button>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Restaurant Menu scanned</p>
+                                <p class="text-xs text-gray-600">2 minutes ago • New York, NY</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Business Card QR created</p>
+                                <p class="text-xs text-gray-600">1 hour ago</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">Event Ticket scanned</p>
+                                <p class="text-xs text-gray-600">3 hours ago • Los Angeles, CA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div class="flex-1">
+                                <p class="text-sm font-medium text-gray-900">WiFi QR updated</p>
+                                <p class="text-xs text-gray-600">5 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Geographic Analytics -->
+                <div class="card">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-6">Scan Locations</h3>
+                    
+                    <!-- Map Placeholder -->
+                    <div class="h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1519302959554-a75be0afc82a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="World map showing QR code scan locations" class="w-full h-full object-cover rounded-lg" loading="lazy" onerror="this.src='https://images.pexels.com/photos/355952/pexels-photo-355952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                    </div>
+                    
+                    <!-- Top Locations -->
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-900">New York, NY</span>
+                            <span class="text-sm text-gray-600">4,234 scans</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-900">Los Angeles, CA</span>
+                            <span class="text-sm text-gray-600">2,891 scans</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-900">Chicago, IL</span>
+                            <span class="text-sm text-gray-600">1,567 scans</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <rect x="2" y="2" width="6" height="6" rx="1"/>
+                            <rect x="10" y="2" width="2" height="2"/>
+                            <rect x="14" y="2" width="2" height="2"/>
+                            <rect x="18" y="2" width="2" height="2"/>
+                            <rect x="24" y="2" width="6" height="6" rx="1"/>
+                            <rect x="2" y="10" width="2" height="2"/>
+                            <rect x="6" y="10" width="2" height="2"/>
+                            <rect x="10" y="10" width="6" height="6" rx="1"/>
+                            <rect x="18" y="10" width="2" height="2"/>
+                            <rect x="24" y="10" width="2" height="2"/>
+                            <rect x="28" y="10" width="2" height="2"/>
+                            <rect x="2" y="14" width="2" height="2"/>
+                            <rect x="18" y="14" width="2" height="2"/>
+                            <rect x="24" y="14" width="2" height="2"/>
+                            <rect x="28" y="14" width="2" height="2"/>
+                            <rect x="2" y="18" width="2" height="2"/>
+                            <rect x="10" y="18" width="2" height="2"/>
+                            <rect x="14" y="18" width="2" height="2"/>
+                            <rect x="18" y="18" width="2" height="2"/>
+                            <rect x="24" y="18" width="2" height="2"/>
+                            <rect x="28" y="18" width="2" height="2"/>
+                            <rect x="2" y="24" width="6" height="6" rx="1"/>
+                            <rect x="10" y="24" width="2" height="2"/>
+                            <rect x="14" y="24" width="2" height="2"/>
+                            <rect x="18" y="24" width="2" height="2"/>
+                            <rect x="24" y="24" width="6" height="6" rx="1"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">QR Studio</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Professional QR code generation platform trusted by millions worldwide.
+                    </p>
+                </div>
+
+                <!-- Product Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="qr_code_generator.html" class="hover:text-white transition-colors">QR Generator</a></li>
+                        <li><a href="batch_generator.html" class="hover:text-white transition-colors">Batch Tools</a></li>
+                        <li><a href="dashboard.html" class="hover:text-white transition-colors">Dashboard</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">API</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="resource_hub.html" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Best Practices</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div>
+                    <h3 class="font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="javascript:void(0)" class="hover:text-white transition-colors">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 QR Studio. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button (Mobile) -->
+    <div class="fixed bottom-6 right-6 md:hidden z-50">
+        <a href="qr_code_generator.html" class="w-14 h-14 bg-primary text-white rounded-full shadow-floating flex items-center justify-center hover:bg-primary-700 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+            </svg>
+        </a>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
